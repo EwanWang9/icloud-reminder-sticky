@@ -1,0 +1,50 @@
+<Window x:Class="ICloudReminderSticky.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        Title="iCloud 提醒便利贴"
+        WindowStyle="None"
+        ResizeMode="CanResize"
+        ShowInTaskbar="True"
+        Background="#202124"
+        AllowsTransparency="False"
+        MinWidth="340"
+        MinHeight="420">
+  <Grid Background="#202124">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="30" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Border x:Name="TitleBar" Grid.Row="0" Background="#202124"
+            MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+      <Grid>
+        <TextBlock Text="⠿" Margin="10,0,0,0" VerticalAlignment="Center"
+                   Foreground="#77787C" FontSize="15" ToolTip="拖动窗口；双击回到右上角" />
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+          <Button x:Name="PinButton" Content="&#xE718;" ToolTip="置顶"
+                  Click="PinButton_Click" Style="{StaticResource ToolbarButton}" />
+          <Button Content="&#xE72C;" ToolTip="刷新"
+                  Click="RefreshButton_Click" Style="{StaticResource ToolbarButton}" />
+          <Button Content="&#xE80F;" ToolTip="移回右上角"
+                  Click="SnapButton_Click" Style="{StaticResource ToolbarButton}" />
+          <Button Content="返回清单" Width="66" ToolTip="返回透明桌面清单"
+                  FontFamily="Microsoft YaHei UI" FontSize="11"
+                  Click="HideButton_Click" Style="{StaticResource ToolbarButton}" />
+          <Button Content="&#xE8BB;" ToolTip="退出"
+                  Click="CloseButton_Click" Style="{StaticResource CloseButton}" />
+        </StackPanel>
+      </Grid>
+    </Border>
+
+    <Grid Grid.Row="1" Background="#1C1C1E">
+      <wv2:WebView2 x:Name="Browser" />
+      <Border x:Name="LoadingPanel" Background="#1C1C1E">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+          <TextBlock x:Name="LoadingTitle" Text="正在打开 iCloud…" FontSize="15" Foreground="#F2F2F2" HorizontalAlignment="Center" />
+          <TextBlock x:Name="LoadingSubtitle" Text="首次使用请登录 Apple 账户" Margin="0,8,0,0" FontSize="12" Foreground="#8E8E93" />
+        </StackPanel>
+      </Border>
+    </Grid>
+  </Grid>
+</Window>
