@@ -1,12 +1,14 @@
 # iCloud 提醒便利贴
 
+[![CI](https://github.com/EwanWang9/icloud-reminder-sticky/actions/workflows/ci.yml/badge.svg)](https://github.com/EwanWang9/icloud-reminder-sticky/actions/workflows/ci.yml)
+
 一个固定在 Windows 桌面右上角的轻量 iCloud 提醒事项桌面清单。后台页面来自 Apple 中国大陆官方站点 `https://www.icloud.com.cn/reminders/`，登录凭据由 WebView2 的独立浏览器资料目录管理，应用本身不会读取 Apple 密码。
 
 > 本项目是非官方开源工具，与 Apple Inc. 无隶属或合作关系。它依赖 iCloud 网页结构，Apple 更新网页后可能需要同步更新适配。
 
 ## 下载
 
-请从仓库右侧的 **Releases** 下载与电脑架构对应的压缩包：
+请从[最新版本下载页](https://github.com/EwanWang9/icloud-reminder-sticky/releases/latest)下载与电脑架构对应的压缩包：
 
 - 大多数 Intel/AMD Windows 电脑：`win-x64`
 - Windows ARM 设备：`win-arm64`
